@@ -204,19 +204,37 @@
   overflow: hidden;
 }
 
+.mobile-download:hover {
+  background-color: transparent;
+}
+
+.mobile-download:hover svg path {
+  fill: #fff;
+}
+
 .mobile-download::before {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: -2px;
   width: 100%;
   height: 0%;
   background-color: #000;
   border: 1px solid #000;
   border-radius: 100%;
-  transition: all 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: -1;
 }
 
 .mobile-download:hover::before {
   height: 100%;
+  bottom: 0px;
+}
+
+/* Desktop Media query */
+/* .navbar-container desktop  */
+@media screen and (min-width: 1200px) {
+  .navbar-container-mobile.mobile {
+    display: none;
+  }
 }
