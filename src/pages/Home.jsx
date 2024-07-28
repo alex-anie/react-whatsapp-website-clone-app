@@ -1,3 +1,4 @@
+import AngleRight from "../assets/svg/AngleRight";
 import Download from "../assets/svg/Download";
 
 const images = {
@@ -10,6 +11,11 @@ const images = {
   womanGirlMobile: "woman-girl-mobile",
   womanGirl: "woman-girl",
   morningMum: "morning-mum",
+  peopleBottom: "people-bottom",
+  peopleTop: "people-top",
+  peopleBottomMobile: "people-bottom-mobile",
+  peopleTopMobile: "people-top-mobile",
+  familyCalls: "family-calls",
 };
 
 export default function Home() {
@@ -63,6 +69,43 @@ export default function Home() {
             </p>
           </section>
           <div></div>
+        </main>
+
+        {/* ::USER SECTION:: */}
+        <main className="home-user-section">
+          <section className="user-section-container">
+            <aside className="user-section-top-img user-section-img"></aside>
+            <aside className="user-section-text">
+              <p>
+                With private messaging and calling, you can be yourself, speak
+                freely and feel close to the most important people in your life
+                no matter where they are.
+              </p>
+            </aside>
+            <aside className="user-section-bottom-img user-section-img"></aside>
+          </section>
+        </main>
+
+        {/* ::CALL SECTION:: */}
+        <main className="home-calls-section">
+          <section className="calls-section">
+            <aside>
+              <h1>Never miss a moment with voice and video calls</h1>
+              <p>
+                From a group call to classmates to a quick call with mom, feel
+                like you’re in the same room with voice and video calls.
+              </p>
+              <button>
+                <span>Learn more</span>
+                <span>
+                  <AngleRight width={20} height={20} />
+                </span>
+              </button>
+            </aside>
+            <aside>
+              <img src={`/src/assets/imgs/${images.familyCalls}.png`} alt="" />
+            </aside>
+          </section>
         </main>
       </main>
     </>
