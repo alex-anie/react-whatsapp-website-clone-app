@@ -1,0 +1,222 @@
+/* NAVBAR */
+.navbar-container.desktop {
+  display: none; /*Desktop navbar should be shut up*/
+}
+.navbar-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  height: 4.5em;
+  width: 100vw;
+  background-color: rgb(252, 245, 235 / 30%);
+  border: 1px solid #ccc;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 20;
+}
+
+.navbar-container .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  width: 95%;
+  margin: 0 auto;
+}
+
+.navbar-container .navbar .navlinks {
+  display: flex;
+  gap: 2em;
+}
+
+.navbar-container .navbar .navlinks li {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.navbar-container .features-nav-btn {
+  cursor: pointer;
+}
+
+.navbar-container .features-nav-btn button {
+  display: flex;
+}
+
+.navbar-container .feature-nav-icon {
+  margin-top: 4px;
+}
+
+/* Hide Feature Navbar */
+.navbar-feature.hidden {
+  display: none;
+}
+
+/*features card*/
+.features-link-root {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 15;
+}
+
+.features-link-container {
+  display: flex;
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.features-link-card {
+  display: flex;
+  border: 1px solid #a19d9d;
+  border-radius: 20px;
+  width: 10em;
+  height: 10em;
+  padding: 24px;
+}
+
+.features-link-card aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 1em;
+}
+
+.features-link-card .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #25d366;
+  width: 32px;
+  min-height: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.features-link-card .icon svg path {
+  fill: white;
+}
+
+.features-link-card:hover {
+  background-color: #25d366;
+  border: 1px solid #000;
+}
+
+.features-link-card:hover .icon {
+  background-color: #000;
+}
+
+.features-link-card:hover .icon svg path {
+  fill: #25d366;
+}
+
+/*Download Button*/
+.navbar-container .navbar .download-button-wrapper .download-button {
+  background-color: #25d366;
+  padding: 0 1em;
+  height: 2.5em;
+  line-height: 2.5em;
+  border-radius: 100px;
+  border: 1px solid black;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.navbar-container .navbar .download-button-wrapper .download-text {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+/* navlink hover */
+.navbar-container .navlinks li {
+  position: relative;
+}
+
+.navbar-container .navlinks li::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #25d366;
+  transition: all 0.5s ease;
+}
+
+.navbar-container .navlinks li:hover::before {
+  width: 100%;
+}
+
+/* Desktop Media query */
+/* .navbar-container desktop  */
+@media screen and (min-width: 1200px) {
+  .navbar-container.desktop {
+    display: block;
+  }
+}
+
+/* navbar-container-mobile */
+.navbar-container-mobile {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  height: 4.5em;
+  width: 100vw;
+  background-color: rgb(252, 245, 235 / 30%);
+  border: 1px solid #ccc;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 20;
+}
+
+.mobile-navbar {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.mobile-download {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+  min-height: 2em;
+  border-radius: 100%;
+  border: 1px solid #000;
+  background-color: #25d366;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-download::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 0%;
+  background-color: #000;
+  border: 1px solid #000;
+  border-radius: 100%;
+  transition: all 0.5s ease;
+}
+
+.mobile-download:hover::before {
+  height: 100%;
+}
