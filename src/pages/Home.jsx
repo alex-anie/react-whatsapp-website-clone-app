@@ -1,5 +1,8 @@
 import AngleRight from "../assets/svg/AngleRight";
 import Download from "../assets/svg/Download";
+import LearnMoreBtn from "../components/LearnMoreBtn";
+
+import PropTypes from "prop-types";
 
 const images = {
   cantWaitText: "cant-wait-text",
@@ -16,6 +19,61 @@ const images = {
   peopleBottomMobile: "people-bottom-mobile",
   peopleTopMobile: "people-top-mobile",
   familyCalls: "family-calls",
+  typing: "typing",
+  chats: "chats",
+  chatsBg: "chats-bg",
+  feelGirl: "feel-girl",
+  feelEmoji: "feel-emoji",
+  feelEmojiLg: "feel-emoji-lg",
+  jio: "jio",
+};
+
+function SectionComponents({
+  headingText,
+  emText,
+  paraText,
+  imgObj,
+  classNameMainTag,
+  classNameH1Tag,
+  classNamePTag,
+  classButtonTag,
+  sectionStyle,
+}) {
+  return (
+    <>
+      <main className={`speak-section ${classNameMainTag}`}>
+        <section className={`speak-container ${sectionStyle}`}>
+          <aside className="speak-content">
+            <h1 className={`h1-heading-text ${classNameH1Tag}`}>
+              {headingText} <br /> <em>{emText}</em>
+            </h1>
+            <p className={`para-text ${classNamePTag}`}>{paraText}</p>
+            <LearnMoreBtn
+              buttonText="Learn More"
+              Icon={AngleRight}
+              className={`${classButtonTag}`}
+            />
+          </aside>
+
+          <aside className="speak-image">
+            <img src={`/src/assets/imgs/${imgObj}.png`} alt="" />
+          </aside>
+        </section>
+      </main>
+    </>
+  );
+}
+
+SectionComponents.propTypes = {
+  headingText: PropTypes.string.isRequired,
+  emText: PropTypes.string,
+  paraText: PropTypes.string.isRequired,
+  imgObj: PropTypes.object.isRequired,
+  classNameMainTag: PropTypes.string,
+  classNameH1Tag: PropTypes.string,
+  classNamePTag: PropTypes.string,
+  classButtonTag: PropTypes.string,
+  sectionStyle: PropTypes.string,
 };
 
 export default function Home() {
@@ -87,26 +145,66 @@ export default function Home() {
         </main>
 
         {/* ::CALL SECTION:: */}
-        <main className="home-calls-section">
-          <section className="calls-section">
-            <aside>
-              <h1>Never miss a moment with voice and video calls</h1>
-              <p>
-                From a group call to classmates to a quick call with mom, feel
-                like you’re in the same room with voice and video calls.
-              </p>
-              <button>
-                <span>Learn more</span>
-                <span>
-                  <AngleRight width={20} height={20} />
-                </span>
-              </button>
-            </aside>
-            <aside>
-              <img src={`/src/assets/imgs/${images.familyCalls}.png`} alt="" />
-            </aside>
-          </section>
-        </main>
+        <div>
+          <SectionComponents
+            sectionStyle="call-section-flip"
+            headingText="Never miss a moment with voice and video calls"
+            paraText="From a group call to classmates to a quick call with mom, feel like you’re in the same room with voice and video calls"
+            imgObj={images.familyCalls}
+            classNameMainTag="call-main-tag"
+            classNameH1Tag="call-heading-text"
+          />
+        </div>
+
+        {/* ::SPEAK SECTION:: */}
+        <div>
+          <SectionComponents
+            headingText="Speak"
+            emText="freely"
+            paraText="With end-to-end encryption, your personal messages and calls are secured. Only you and the person you're talking to can read or listen to them, and nobody in between, not even WhatsApp."
+            imgObj={images.typing}
+            classNameMainTag="speak-main-tag"
+            classNamePTag="speak-p-tag"
+            classNameH1Tag="speak-h1-tag"
+            classButtonTag="cs-speak-btn"
+          />
+        </div>
+
+        {/* ::CHATS SECTION:: */}
+        <div>
+          <SectionComponents
+            sectionStyle=""
+            headingText="Keep in touch with your groups"
+            paraText="Whether it's planning an outing with friends or simply staying on top of your family chats, group conversations should feel effortless."
+            imgObj={images.chatsBg}
+            classNameMainTag=""
+            classNameH1Tag=""
+          />
+        </div>
+
+        {/* ::FEEL SECTION:: */}
+        <div>
+          <SectionComponents
+            sectionStyle=""
+            headingText="Say what you feel"
+            paraText="Express yourself without words. Use stickers and GIFs or share everyday moments on Status. Record a voice message for a quick hello or a longer story."
+            imgObj={images.feelGirl}
+            classNameMainTag=""
+            classNameH1Tag=""
+          />
+        </div>
+
+        {/* ::TRANSFORM SECTION:: */}
+        <div>
+          <SectionComponents
+            sectionStyle=""
+            headingText="Transform your business"
+            paraText="WhatsApp Business helps you reach your customers globally to deliver compelling experiences at scale. Showcase your products and services, increase sales, and build relationships all with WhatsApp."
+            imgObj={images.jio}
+            classNameMainTag=""
+            classNameH1Tag=""
+          />
+        </div>
       </main>
     </>
   );

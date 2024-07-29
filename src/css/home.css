@@ -196,7 +196,8 @@
 =================== */
 .home-user-section {
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
+  padding: 2em;
 }
 
 .user-section-container {
@@ -237,5 +238,128 @@
 
   .user-section-bottom-img {
     background-image: url("/src/assets/imgs/people-bottom.png");
+  }
+}
+
+/* CALLS SECTION 
+=================== */
+.call-main-tag {
+  background-color: white;
+}
+
+.calls-section-btn {
+  display: flex;
+  cursor: pointer;
+}
+
+.calls-section-btn:hover {
+  color: #25d366;
+}
+
+.calls-section-btn:hover span svg {
+  stroke: #25d366;
+}
+
+.calls-section-btn span:nth-child(1) {
+  font-size: 20px;
+  border-bottom: 2px solid #25d366;
+}
+
+.calls-section-btn span:nth-child(2) {
+  margin-top: 5px;
+
+  margin-left: 5px;
+  display: inline-block;
+}
+
+/* SPEAK SECTION 
+=================== */
+.speak-section {
+  width: 100vw;
+}
+
+.speak-main-tag {
+  background-color: #111b21;
+}
+
+.speak-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+/* content */
+.speak-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+.h1-heading-text {
+  font-size: 2em;
+  color: black;
+  font-weight: 400;
+}
+
+.speak-h1-tag {
+  color: white;
+}
+
+.speak-content h1 em {
+  font-style: normal;
+  color: #25d366;
+}
+
+.para-text {
+  color: black;
+  margin: 1em 0;
+  font-size: 1.2em;
+}
+
+.speak-p-tag {
+  color: white;
+}
+
+.cs-speak-btn {
+  color: white;
+}
+
+/* images */
+.speak-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 500px;
+}
+
+.speak-image img {
+  height: 100%;
+}
+
+/* Media */
+@media screen and (min-width: 760px) {
+  .speak-container {
+    width: 80%;
+    flex-direction: row-reverse;
+    gap: 2em;
+    margin: 0 auto;
+  }
+
+  .speak-content {
+    height: 500px;
+    justify-content: center;
+  }
+
+  .speak-content h1 {
+    font-size: 4em;
+    line-height: ;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .speak-container {
+    width: 60%;
   }
 }
